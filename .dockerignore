@@ -1,0 +1,37 @@
+
+# Git
+.git
+.gitignore
+
+# CI
+.github
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+.venv/
+env/
+
+# Pytest
+.pytest_cache/
+coverage.xml
+htmlcov/
+
+# Pre-commit
+.pre-commit-config.yaml
+
+# Editor
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+docker-compose.yml
