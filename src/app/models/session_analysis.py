@@ -10,14 +10,14 @@ def generate_uuid():
     return str(uuid.uuid4())
 
 
-class EvaluationCriteria(Base):
-    __tablename__ = "evaluation_criteria"
+class SessionAnalysis(Base):
+    __tablename__ = "session_analysis"
 
     id = Column(String, primary_key=True, default=generate_uuid)
-    persona_id = Column(String, ForeignKey("personas.id"))
-    nome = Column(String(255), nullable=False)
-    descricao = Column(Text)
-    peso = Column(Integer)
+    session_id = Column(String, ForeignKey("chat_sessions.id"))
+    score_total = Column(Integer)
+    feedback_geral = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)
 
-    persona = relationship("Persona", back_populates="criteria")
+    session = relationship("ChatSession", back_populates="analysis")
+    results = relationship("CriteriaResult", back_populates="analysis")
