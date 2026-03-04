@@ -4,7 +4,12 @@ from typing import Annotated
 from sqlalchemy.orm import Session
 from src.app.models.user import User
 from src.app.schemas.auth.user_create import UserCreate
-from src.app.security.password import get_password_hash
+from src.app.security.password import (
+    get_password_hash,
+    verify_password,
+    criar_token_acesso,
+)
+from fastapi.security import OAuth2PasswordRequestForm
 
 
 auth_router = APIRouter(prefix="/auth", tags=["auth"])
@@ -35,3 +40,35 @@ def sing_up(db: Annotated[Session, Depends(get_db)], user_data: UserCreate):
     db.refresh(new_user)
 
     return {"message": "Usuário criado com sucesso!", "user_id": new_user.id}
+
+
+# Roda de login.
+@auth_router.post(
+    "/sign_in",
+    responses={
+        401: {"description": "E-mail ou senha incorretos"},
+        403: {"description": "Conta inativa"},
+    },
+)
+def sing_in(
+    data: Annotated[OAuth2PasswordRequestForm, Depends()],
+    db: Annotated[Session, Depends(get_db)],
+):
+    # O OAuth2PasswordRequestForm usa 'username', então buscamos pelo email lá
+    usuario = db.query(User).filter(User.email == data.username).first()
+
+    if not usuario or not verify_password(data.password, usuario.password_hash):
+        raise HTTPException(status_code=401, detail="E-mail ou senha incorretos")
+
+    # Incluímos o user_id no payload do token
+    token = criar_token_acesso(
+        data={"sub": usuario.email, "role": usuario.role, "user_id": str(usuario.id)}
+    )
+
+    # Retornamos o user_id e a role na resposta para o frontend salvar no LocalStorage
+    return {
+        "access_token": token,
+        "token_type": "bearer",
+        "user_id": str(usuario.id),
+        "role": usuario.role,
+    }

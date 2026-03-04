@@ -6,13 +6,14 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from passlib.context import CryptContext
+from typing import Annotated
 
 load_dotenv()
 
 # --- CONFIGURAÇÕES ---
 SECRET_KEY = os.getenv("SECRET_KEY_JWT")
-ALGORITHM = os.getenv("ALGORITHM")
-ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 # Configuração profissional do contexto
 pwd_context = CryptContext(
@@ -23,7 +24,7 @@ pwd_context = CryptContext(
     argon2__parallelism=4,
 )
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/sign_in")
 
 
 def criar_token_acesso(data: dict):
@@ -61,3 +62,12 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
         return {"email": email, "role": role, "id": user_id}
     except JWTError:
         raise credentials_exception
+
+
+def get_admin_user(current_user: Annotated[dict, Depends(get_current_user)]):
+    if current_user.get("role") not in ["admin"]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Acesso negado: Requer privilégios de Administrador.",
+        )
+    return current_user
