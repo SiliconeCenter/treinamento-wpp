@@ -12,6 +12,7 @@ from src.app.models.user import User
 users_router = APIRouter(prefix="/users", tags=["users"])
 
 
+# Rota para deletar o usuário
 @users_router.delete(
     "/{user_email}",
     responses={404: {"description": "Nenhuma usuario com {user_email} encontrado."}},
@@ -38,3 +39,6 @@ def delete_user(
     db.delete(user)
     db.commit()
     return {"mensagem": "Usuário deletado"}
+
+
+# Rota para aleterar as informações do uruário

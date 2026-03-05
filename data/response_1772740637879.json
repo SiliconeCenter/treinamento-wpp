@@ -1,0 +1,213 @@
+{
+  "total_arquivos": 52,
+  "arquivos": [
+    {
+      "arquivo": "Padrão de Atendimento da Recepção.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Alteração de Situação na Agenda.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Tratativa do Fechamento no RD CRM.docx",
+      "sistema": "fechamento"
+    },
+    {
+      "arquivo": "Manual de Auditoria da Cirurgia.docx",
+      "sistema": "financeiro"
+    },
+    {
+      "arquivo": "Manual RD CRM - Enfermagem.docx",
+      "sistema": "enfermagem"
+    },
+    {
+      "arquivo": "Pacotes Silicone Center.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Criação de Orçamento Comercial (CNN).docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Upload de Base no RD CRM.docx",
+      "sistema": "telemarketing"
+    },
+    {
+      "arquivo": "Manual de Emissão de Boletos no CNN.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Agendamento de Consulta 2ª Opinião.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Apontamento das Informações de RPA.docx",
+      "sistema": "fechamento"
+    },
+    {
+      "arquivo": "Verificações da Auditoria do setor Financeiro.docx",
+      "sistema": "financeiro"
+    },
+    {
+      "arquivo": "Manual do Painel de Chamadas CNN.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Agendamento de Cirurgia no CNN - Unidades de SP.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Preenchimento do Termo de Transferência de Crédito.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "MetodoSC bases teóricas parte1.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Verificação de Consulta Isenta.docx",
+      "sistema": "financeiro"
+    },
+    {
+      "arquivo": "Manual de Agendamento de Exames na Matriz.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Geração de Formulário de Anamnese pelo Sistema.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Agendamento de Consultas no CNN.docx",
+      "sistema": "telemarketing"
+    },
+    {
+      "arquivo": "Metodo Silicone Center.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Cadastro de Médicos no Sistema Moderna.docx",
+      "sistema": "relacionamento médico"
+    },
+    {
+      "arquivo": "Negociação - Novo.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual Calculadora.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Criação de Orçamento e Prontuário para Consulta.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Gravação no Teams.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Tratativa das Negociações no Funil de Vendas.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Envio de Contrato pelo Docusign.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Cronograma de treinamento - Passos.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Validação dos Termos de Próprio Punho.docx",
+      "sistema": "fechamento"
+    },
+    {
+      "arquivo": "Manual de Apuração de Premiação.docx",
+      "sistema": "financeiro"
+    },
+    {
+      "arquivo": "Manual de Auditoria do Contrato (Documentação).docx",
+      "sistema": "financeiro"
+    },
+    {
+      "arquivo": "Manual de Verificação de Tarefas no RD CRM.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Preenchimento do Anestesista da Cirurgia.docx",
+      "sistema": "fechamento"
+    },
+    {
+      "arquivo": "Manual de Tratativa das Negociações no Funil Pré_Venda.docx",
+      "sistema": "telemarketing"
+    },
+    {
+      "arquivo": "Manual de Geração de Documentos Avulsos no CNN.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual para Organização da Recepção e Consultórios.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Verificação para Reposição de Estoque por Vendas-Reembolso.docx",
+      "sistema": "estoque"
+    },
+    {
+      "arquivo": "Manual de Vínculo do Orçamento no Agendamento de Cirurgia.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Agendamento de Cirurgia no CNN - Fora de SP.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Criação de Negócio no RD Station CRM.docx",
+      "sistema": "telemarketing"
+    },
+    {
+      "arquivo": "Manual de Criação de Pasta Privada.docx",
+      "sistema": "supervisoras unidades"
+    },
+    {
+      "arquivo": "Manual de Atendimento via Teams.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Criação do Orçamento de Vendas Avulsas.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Upload de Anexos no cadastro da Paciente.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Verificação de Pagamentos Realizados.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Apontamento do Sutiã no CNN.docx",
+      "sistema": "fechamento"
+    },
+    {
+      "arquivo": "Manual de Pesquisa de Prontuário no CNN.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Tratativa das Negociações no Funil de Comparecimento.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Impressão de Etiqueta da Paciente.docx",
+      "sistema": "recpcao"
+    },
+    {
+      "arquivo": "Manual de Reenvio de Contrato (Recusar assinatura) pela DocuSign.docx",
+      "sistema": "assessoria comercial"
+    },
+    {
+      "arquivo": "Manual de Geração do Relatório de Agendamentos + Telefone de Paciente.docx",
+      "sistema": "recpcao"
+    }
+  ]
+}
