@@ -1,9 +1,10 @@
+import pathlib
 import shutil
 from pathlib import Path
-from fastapi import UploadFile
-import pathlib
-from PyPDF2 import PdfReader
+
 import docx
+from fastapi import UploadFile
+from PyPDF2 import PdfReader
 
 
 def read_file(file: UploadFile):
@@ -18,7 +19,6 @@ def read_file(file: UploadFile):
     path = str(dest)
 
     tipo = pathlib.Path(path).suffix
-    print(tipo)
 
     match tipo:
         case ".txt":
@@ -35,13 +35,27 @@ def read_file(file: UploadFile):
 
             return texto
 
-        case ".doc":
-            doc = docx.Document(path)
-            texto = ""
+        case ".doc" | ".docx":
+            try:
+                doc = docx.Document(path)
+                texto = ""
 
-            for paragrafo in doc.paragraphs:
-                texto += paragrafo.text + "\n"
+                # Extrai texto dos parágrafos
+                for paragrafo in doc.paragraphs:
+                    if paragrafo.text.strip():  # Ignora linhas vazias
+                        texto += paragrafo.text + "\n"
 
-            return texto
+                # Extrai texto das tabelas (se houver)
+                for tabela in doc.tables:
+                    for linha in tabela.rows:
+                        for celula in linha.cells:
+                            if celula.text.strip():
+                                texto += celula.text + " | "
+                        texto += "\n"
+
+                return texto if texto.strip() else "Arquivo Word vazio"
+
+            except Exception as e:
+                return f"Erro ao ler arquivo Word: {str(e)}"
         case _:
             return "O tipo do arquivo não é suportado!"

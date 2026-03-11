@@ -1,10 +1,10 @@
 import pytest
+from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from fastapi.testclient import TestClient
 
-from src.app.main import app
 from src.app.core.database import Base, get_db
+from src.app.main import app
 
 # 1. Banco em memória para ser rápido e isolado
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"

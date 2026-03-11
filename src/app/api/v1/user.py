@@ -2,12 +2,14 @@
 # Atualizar senha
 # Alterar nome
 
-from src.app.core.database import get_db
 from typing import Annotated
-from sqlalchemy.orm import Session
+
 from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.orm import Session
+
+from src.app.core.database import get_db
+from src.app.models.models_treinmento_wpp import User
 from src.app.security.password import get_admin_user
-from src.app.models.user import User
 
 users_router = APIRouter(prefix="/users", tags=["users"])
 

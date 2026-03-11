@@ -1,16 +1,17 @@
-from fastapi import APIRouter, Depends, HTTPException, status
-from src.app.core.database import get_db
 from typing import Annotated
+
+from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from src.app.models.user import User
+
+from src.app.core.database import get_db
+from src.app.models.models_treinmento_wpp import User
 from src.app.schemas.auth.user_create import UserCreate
 from src.app.security.password import (
+    criar_token_acesso,
     get_password_hash,
     verify_password,
-    criar_token_acesso,
 )
-from fastapi.security import OAuth2PasswordRequestForm
-
 
 auth_router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -33,6 +34,7 @@ def sing_up(db: Annotated[Session, Depends(get_db)], user_data: UserCreate):
         nome=user_data.nome,
         email=user_data.email,
         password_hash=password_hased,
+        role="admin",
     )
 
     db.add(new_user)
